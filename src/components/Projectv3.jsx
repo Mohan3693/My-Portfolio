@@ -26,7 +26,7 @@ const projects = [
             "This very website! Designed and developed from scratch with a focus on smooth animations, responsive design, and a professional presentation. Features include animated sections, project modals, and a beautiful custom theme.",
         tech: ["Next.js", "React", "Tailwind"],
         github: "https://github.com/Mohan3693/My-Portfolio",
-        demo: "https://my-portfolio-one-sable.vercel.app/", // <-- updated live link
+        demo: "https://my-portfolio-fawn-eight-38.vercel.app/", // <-- updated live link
         image: "/portfolio-screenshot.png",
         featured: true,
         createdAt: "2025-06-06",
