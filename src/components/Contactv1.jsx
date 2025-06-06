@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const SOCIALS = [
   {
-    href: "satishmohan3693@gmail.com",
+    href: " satishmohan3693@gmail.com ",
     label: "Email",
     icon: <FaEnvelope size={24} />,
   },
@@ -91,7 +91,7 @@ const ContactSectionV1 = () => {
             I’d love to hear from you! Fill out the form or connect via socials.
           </p>
           <form
-            action="https://formspree.io/f/mkgbobno"
+            action=" https://formspree.io/f/mkgbobno "
             method="POST"
             className="space-y-5"
             onSubmit={handleSubmit}
