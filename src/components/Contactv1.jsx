@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const SOCIALS = [
   {
-    href: " satishmohan3693@gmail.com ",
+    href: " mailto:satishmohan3693@gmail.com ",
     label: "Email",
     icon: <FaEnvelope size={24} />,
   },
