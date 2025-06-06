@@ -20,7 +20,347 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background, #f7f7f7);
+  color: var(--color-neutral);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CodeCraft Theme Color Palette:
+   • Background Light: #f5f7fa
+   • Background Dark:  #12141a
+   • Primary Blue-Grey: #2c3e50
+   • Secondary Blue-Grey: #34495e
+   • Accent (Neon Green): #39ff14
+   • Neutral Grey: #95a5a6
+   • Text (light-mode): #2c3e50
+   • Text (dark-mode):  #ecf0f1
+   • Highlight (same as accent): #39ff14
+*/
+
+:root {
+  --color-accent: #ff385c;
+  --color-neutral: #2c3e50; /* Darker shade for text */
+  --color-bg-light: #f7f7f7;
+  --color-bg-dark: #18181b;
+}
+
+/* --- APPLE-LIKE FONT STYLING --- */
+:root {
+  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-secondary: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --font-size-heading: 28px;
+  --font-size-subheading: 20px;
+  --font-size-small: 14px;
+  --line-height-base: 1.6;
+  --line-height-heading: 1.4;
+  --letter-spacing-base: 0.02em;
+  --letter-spacing-heading: 0.04em;
+}
+
+/* --- BODY STYLING --- */
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--color-neutral);
+  background-color: var(--color-bg-light);
+}
+
+/* --- HEADINGS --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: var(--font-size-heading);
+}
+
+h2 {
+  font-size: var(--font-size-subheading);
+}
+
+h3, h4, h5, h6 {
+  font-size: var(--font-size-small);
+}
+
+/* --- PARAGRAPHS --- */
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  margin-bottom: 1rem;
+}
+
+/* --- BUTTONS --- */
+.btn-primary, .btn-secondary {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-base);
+}
+
+/* --- SPACING --- */
+.container {
+  padding: 2rem;
+}
+
+.section {
+  padding: 6rem 2rem;
+}
+
+.card {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* --- SMOOTH SCROLLING --- */
+html {
+  scroll-behavior: smooth;
+  /* Optional: for even softer scroll on supported browsers */
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- SOFT CARD SHADOWS --- */
+.shadow-xl {
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12) !important;
+}
+
+/* --- GLASSY CARD STYLE --- */
+.card-glass {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(16px);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: box-shadow 0.3s, background 0.3s, transform 0.3s;
+}
+.dark .card-glass {
+  background: rgba(36,36,36,0.85);
+}
+
+/* --- BUTTONS --- */
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 9999px;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 2px 8px 0 rgba(255,56,92,0.10);
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.btn-primary:hover {
+  background: #e11d48;
+  box-shadow: 0 4px 16px 0 rgba(255,56,92,0.18);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.btn-secondary {
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 9999px;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.btn-secondary:hover {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 4px 16px 0 rgba(255,56,92,0.12);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* --- THEME COLORS --- */
+:root {
+  --color-accent: #ff385c;
+  --color-neutral: #2c3e50; /* Darker shade for text */
+  --color-bg-light: #f7f7f7;
+  --color-bg-dark: #18181b;
+}
+
+/* --- UTILITY CLASSES --- */
+.bg-theme-light {
+  background-color: var(--color-bg-light) !important;
+}
+.bg-theme-dark {
+  background-color: var(--color-bg-dark) !important;
+}
+.text-theme-light {
+  color: var(--color-text-light) !important;
+}
+.text-theme-dark {
+  color: var(--color-text-dark) !important;
+}
+
+/* --- WAVE ANIMATION --- */
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+.animate-wave {
+  animation: wave 1.6s infinite;
+  display: inline-block;
+}
+
+/* --- IMPRESSIVE: FADE-IN ON SCROLL FOR SECTIONS --- */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
+    will-change: opacity, transform;
+  }
+  .fade-section.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- IMPRESSIVE: SUBTLE HOVER FOR ALL CARDS --- */
+.card-glass:hover {
+  box-shadow: 0 12px 48px 0 rgba(255,56,92,0.15), 0 1.5px 8px 0 rgba(31,38,135,0.10);
+  background: rgba(255,245,247,0.92);
+  transform: scale(1.025);
+}
+
+/* --- IMPRESSIVE: CUSTOM SCROLLBAR --- */
+::-webkit-scrollbar {
+  width: 12px;
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, #ffb6c1 0%, #fbc2eb 100%);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(120deg, #ff385c 0%, #f472b6 100%);
+}
+
+/* --- IMPRESSIVE: SECTION DIVIDER --- */
+.section-divider {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ffb6c1 0%, #fbc2eb 100%);
+  opacity: 0.18;
+  margin: 3rem 0;
+}
+
+/* --- IMPRESSIVE: NOISE OVERLAY (if you want to use as a class) --- */
+.noise-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: url('https://www.transparenttextures.com/patterns/noise.png') repeat;
+  opacity: 0.10;
+  mix-blend-mode: multiply;
+}
+
+/* --- IMPROVED BACKGROUND GRADIENTS --- */
+.bg-gradient-light {
+  background: linear-gradient(120deg, #f5f7fa 0%, #ffffff 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(120deg, #12141a 0%, #18181b 100%);
+}
+
+/* --- IMPROVED BUTTONS --- */
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 9999px;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 2px 8px 0 rgba(255,56,92,0.10);
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.btn-primary:hover {
+  background: #e11d48;
+  box-shadow: 0 4px 16px 0 rgba(255,56,92,0.18);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.btn-secondary {
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 9999px;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.btn-secondary:hover {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 4px 16px 0 rgba(255,56,92,0.12);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* --- IMPROVED SECTION SPACING --- */
+.section-heading {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-heading);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-neutral);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* --- GLASSMORPHISM EFFECT --- */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.slide-in {
+  animation: slideIn 1s ease-in-out;
+}
+
