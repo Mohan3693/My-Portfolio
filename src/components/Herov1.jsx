@@ -74,7 +74,7 @@ const HeroSection = () => {
               </span>
               Hi, I’m{" "}
               <span className="bg-gradient-to-r from-red-500 via-red-500 to-red-500 bg-clip-text text-transparent ml-2">
-                Charan
+                Satish
               </span>
             </h1>
             <p className="text-lg md:text-xl text-center">
